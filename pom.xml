@@ -11,7 +11,7 @@
   <packaging>jar</packaging>
   <groupId>org.webjars</groupId>
   <artifactId>svg.js</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.1-SNAPSHOT</version>
   <name>svg.js</name>
   <description>WebJar for svg.js</description>
   <url>http://webjars.org</url>
@@ -19,7 +19,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <upstream.version>1.0.1</upstream.version>
-    <upstream.url>https://raw.githubusercontent.com/wout/svg.js/v${upstream.version}/dist</upstream.url>
+    <upstream.url>https://github.com/wout/svg.js/archive/${upstream.version}.zip</upstream.url>
     <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
     <requirejs>
       {
@@ -63,7 +63,7 @@
                   <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                   <echo message="moving resources" />
                   <move todir="${destDir}">
-                    <fileset dir="${project.build.directory}/SOME_SUBDIR-${upstream.version}" />
+                    <fileset dir="${project.build.directory}/svg.js-${upstream.version}" />
                   </move>
                 </target>
               </configuration>
